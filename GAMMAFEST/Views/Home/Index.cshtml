@@ -1,0 +1,142 @@
+﻿@model IEnumerable<GAMMAFEST.Models.Evento>
+@{
+    ViewData["Title"] = "Home Page";
+    int a = 0;
+}
+
+<link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true">
+
+<div class="text-center">
+    <h1 class="display-4">GAMMA FEST</h1>
+</div>
+
+<body>
+    <div class="py-3 bg-dark bg-pattern mb-4">
+        <div class="col-12">
+            <div class="text-center text-white">
+                <span class=heading-xxs letter-spacing-x1>
+                    DIVERSIÓN EN TODO MOMENTO
+                </span>
+                <a class="cta2" asp-area="" asp-controller="Evento" asp-action="CrearEvento">Nuevo Proceso</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<main>
+    <!-- Primera Seccion -->
+    <section class="services">
+        <div class="container">
+            <div class="subtitle">
+                <center>
+                    <h2 style="color:#0F0F0F">EVENTOS SUPER EXCLUSIVOS<span class="point"></span></h2>
+                </center>
+            </div>
+            @*<p class="copy__section">/Insertar/</p>*@
+            @if (Model.Count() > 0) {
+                @foreach (var item in Model)
+                {
+                    <h2>Eventos Registrados</h2>
+                    a++;
+                    var active = a == 1 ? "active" : "";
+                    <div class="carousel-item @active">
+                        <img class="d-block w-100" src="@Url.Content("~/image/"+item.NombreImagen)" alt="@item.NombreImagen">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>@item.NombreImagen</h5>
+                            <p>@item.Descripcion</p>
+                        </div>
+                    </div>
+                    @*
+                    <div class="card">
+                        <img class="d-block w-100" src="@Url.Content("~/image/"+item.NombreImagen+".jpg")">
+                        @*<img src="~/img/salon.jpg" class="card__img2">*@
+                        @*<div class="card__text">
+                            <p class="card__copy">
+                                <h1>@item.Descripcion</h1>
+                                <h1>@item.FechaInicioEvento.ToString("d")</h1>
+                                <h1>@item.FechaInicioEvento.ToString("hh:mm tt")</h1>
+                            </p>
+                            @*<a class="card__button" asp-area="" asp-controller="Comentario" asp-action="Create">Añadir comentario</a>*@
+                        @*</div>
+                    </div>*@
+                }
+            }
+            else{
+                <p class="Title2">No hay ningún evento registrado</p>
+            }
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer__caption">
+        <section class="download">
+            <h3 class="title__footer">Siguenos en nuestras redes principales</h3>
+            <div class="download__app">
+                <div class="download__item">
+                    <i class='bx bxl-facebook-circle donwload__logo'></i>
+                    <h4 class="download__title">Facebook</h4>
+                </div>
+                <div class="download__item">
+                    <i class='bx bxl-instagram-alt donwload__logo'></i>
+                    <h4 class="download__title">Instagram</h4>
+                </div>
+            </div>
+
+            <div class="footer_copy">
+                <p class="copyright">GammaFest &copy; 2022 Todos los derechos reservados</p>
+                <a href="#" class="politica__privacidad politica__privacidad--margin">Politica de privacidad</a>
+                <a href="#" class="politica__privacidad ">Terminos y condiciones</a>
+            </div>
+        </section>
+
+        <section class="get-email">
+
+            <h3 class="title__footer">¿Quieres trabajar con nosotros?</h3>
+            <form class="newsletter newsletter--modifier">
+                <input type="text" class="newsletter__input" placeholder="Ingresa tu email">
+                <input type="submit" class="newsletter__submit" value="Contactanos">
+            </form>
+
+            <div class="socialmedia">
+                <p class="socialmedia_legend">Siguenos tambien en:</p>
+                <i class='socialmedia_icon bx bxl-linkedin'></i>
+                <i class='socialmedia_icon bx bxl-twitter'></i>
+            </div>
+        </section>
+    </div>
+</footer>
+
+@*<div class="text-center">
+  <h1 class="display-4">GAMMA FEST</h1>
+</div>
+
+<body>
+    <div class="py-3 bg-dark bg-pattern mb-4">
+            <div class="col-12">
+                <div class="text-center text-white">
+                    <span class=heading-xxs letter-spacing-x1>
+                        DIVERSIÓN EN TODO MOMENTO
+                    </span>
+                </div>
+            </div>
+        </div>
+</body>*@
+@*<div class="contact">
+            <div class="item_contact">
+                <i class='bx bx-copyright contact_icon'></i>
+                <h3 class="contact_title">/Insertar/</h3>
+            </div>
+            <div class="item_contact">
+                <i class='bx bx-copyright contact_icon'></i>
+                <h3 class="contact_title">/Insertar/</h3>
+            </div>
+            <div class="item_contact">
+                <i class='bx bx-copyright contact_icon'></i>
+                <h3 class="contact_title">/Insertar/</h3>
+            </div>
+            <div class="item_contact item__contact--gold">
+                <i class='bx bx-copyright contact_icon contact_icon--modifier'></i>
+                <h3 class="contact_title">/Insertar/</h3>
+            </div>
+        </div>*@

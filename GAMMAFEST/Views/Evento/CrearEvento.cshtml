@@ -1,0 +1,58 @@
+﻿@model GAMMAFEST.Models.Evento
+
+@{
+    ViewData["Title"] = "CrearEvento";
+}
+
+<link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true">
+<h1>CrearEvento</h1>
+
+<h4>Evento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="CrearEvento" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Descripcion" class="form-label">Descripción del Evento</label>
+                <textarea asp-for="Descripcion" id="summernote" class="form-control"></textarea>
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaInicioEvento" class="control-label">Ingrese Fecha de Inicio del Evento</label>
+                <input asp-for="FechaInicioEvento" class="form-control" />
+                <span asp-validation-for="FechaInicioEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="NombreImagen" value="a1" />
+                <input asp-for="ImagenTemp" value="a1" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ArchivoImagen" class="control-label">Ingrese Imagen</label>
+                <input asp-for="ArchivoImagen" accept="image/*" />
+                <span asp-validation-for="ArchivoImagen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="IdPromotor" value="36c75f04-db40-4601-bed3-9f2c42d63e94">
+            </div>
+            <div class="form-group">
+                @*<label asp-for="IdString" class="control-label"></label>*@
+                @*<input type="hidden" asp-for="IdString" value="1" class ="form-control" asp-items="ViewBag.Id"></input>*@
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Almacenar Evento" class="cta3" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-controller="Home" asp-action="Index">
+        Regresar
+    </a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
