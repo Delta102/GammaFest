@@ -179,12 +179,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRvXENyZWFyRXZlbnRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/CICLO VIII/CALIDAD Y PRUEBAS DE SOFTWARE/GAMMAFEST/GAMMAFEST/Views/Evento/IndexEvento.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRvXEluZGV4RXZlbnRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/CICLO VIII/CALIDAD Y PRUEBAS DE SOFTWARE/GAMMAFEST/GAMMAFEST/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/CICLO VIII/CALIDAD Y PRUEBAS DE SOFTWARE/GAMMAFEST/GAMMAFEST/Views/Home/Index_Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleF9Ib21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/CICLO VIII/CALIDAD Y PRUEBAS DE SOFTWARE/GAMMAFEST/GAMMAFEST/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CICLO VIII/CALIDAD Y PRUEBAS DE SOFTWARE/GAMMAFEST/GAMMAFEST/Views/Prueba/Prueba.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJ1ZWJhXFBydWViYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/CICLO VIII/CALIDAD Y PRUEBAS DE SOFTWARE/GAMMAFEST/GAMMAFEST/Views/Shared/Error.cshtml]

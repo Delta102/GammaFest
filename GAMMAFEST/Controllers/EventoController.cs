@@ -49,10 +49,12 @@ namespace GAMMAFEST.Controllers
             }
             return View(evento);
         }
-
-        /*public IActionResult Index()
+        [HttpPost]
+        public IActionResult IndexEvento(int TempId)
         {
-            return View();
-        }*/
+            ViewBag.tempId = TempId;
+            IEnumerable<Evento> listaEvento = _context.Evento.Where(u=>u.EventoId==TempId);
+            return View(listaEvento);
+        }
     }
 }

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HwQu6V6pOhLnJI8LXBSJIoEAnPZK50LKugcck7LvCp7VjvY2tmQh86VpNJ3WDjbJogp6XMAxQmSaX6/4vqt5Iw==",
+  "dgSpecHash": "G9MuRqRJI1RgR5AIuyQQY+fGkobua7xFhICkff5KmbVncgb6TIuBUn1I9njTWXylGvR/MU0wv6kdw5vzHnlJNA==",
   "success": true,
   "projectFilePath": "E:\\CICLO VIII\\CALIDAD Y PRUEBAS DE SOFTWARE\\GAMMAFEST\\GAMMAFEST\\GAMMAFEST.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\alfre\\.nuget\\packages\\bootstrap\\5.2.0\\bootstrap.5.2.0.nupkg.sha512",
     "C:\\Users\\alfre\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\alfre\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\alfre\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",

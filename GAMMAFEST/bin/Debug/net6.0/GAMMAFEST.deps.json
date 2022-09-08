@@ -14,12 +14,14 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.8",
           "Microsoft.Extensions.Identity.Core": "6.0.8",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.8"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.8",
+          "bootstrap": "5.2.0"
         },
         "runtime": {
           "GAMMAFEST.dll": {}
         }
       },
+      "bootstrap/5.2.0": {},
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -2304,6 +2306,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "bootstrap/5.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YpzkoN4cTzTfmhW4OzPj4QkWXOllC3KR1RCvWgHv+D2bm07HiJQULZ6NYRR9++nOu0iQ6j1W4pszd0xVn6Z8sQ==",
+      "path": "bootstrap/5.2.0",
+      "hashPath": "bootstrap.5.2.0.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",

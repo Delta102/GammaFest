@@ -105,7 +105,15 @@ namespace GAMMAFEST.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("NombreEvento")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("NombreImagen")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Protocolos")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
