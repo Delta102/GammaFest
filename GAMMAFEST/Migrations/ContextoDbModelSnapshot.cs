@@ -90,6 +90,9 @@ namespace GAMMAFEST.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EventoId"), 1L, 1);
 
+                    b.Property<float>("AforoMaximo")
+                        .HasColumnType("real");
+
                     b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -100,6 +103,9 @@ namespace GAMMAFEST.Migrations
                     b.Property<string>("IdPromotor")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("IdUsuario")
+                        .HasColumnType("int");
 
                     b.Property<string>("ImagenTemp")
                         .IsRequired()
@@ -136,11 +142,16 @@ namespace GAMMAFEST.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("EventoId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdUsuario");
+
+                    b.HasIndex("EventoId");
 
                     b.ToTable("Usuario");
                 });
@@ -422,6 +433,17 @@ namespace GAMMAFEST.Migrations
                         .IsRequired();
 
                     b.Navigation("Promotor");
+                });
+
+            modelBuilder.Entity("GAMMAFEST.Models.Usuario", b =>
+                {
+                    b.HasOne("GAMMAFEST.Models.Evento", "Evento")
+                        .WithMany()
+                        .HasForeignKey("EventoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Evento");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

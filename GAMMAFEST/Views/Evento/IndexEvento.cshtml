@@ -1,68 +1,169 @@
 ﻿@model IEnumerable<GAMMAFEST.Models.Evento>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
 @{
-    ViewData["Title"] = "IndexEvento";
+	ViewData["Title"] = "IndexEvento";
 }
 
-<h1>Index</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<!--<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/css/dist/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	@foreach(var item in Model){
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="@Url.Content("~/image/"+item.NombreImagen)" alt="IMG">
+					<span class="login100-form-title">
+						@item.NombreEvento.ToUpper()
+					</span>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.EventoId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaInicioEvento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImagenTemp)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NombreImagen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Protocolos)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Promotor)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaInicioEvento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImagenTemp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombreImagen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Protocolos)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Promotor.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.EventoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EventoId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EventoId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+					<div class="accordion" id="accordionExample">
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingOne">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									<strong>
+										<i>Protocolos de Seguridad para este Evento</i>
+									</strong>
+								</button>
+							</h2>
+							<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+								<div class="accordion-body">
+									<strong>El evento cumple con los siguientes protocolos</strong>
+									<ul>
+										<li type="circle">@item.Protocolos</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingTwo">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									<strong>
+										<i>Ubicación y Fecha del Evento</i>
+									</strong>
+								</button>
+							</h2>
+							<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+								<div class="accordion-body">
+									<strong>Ubicación</strong>
+									<ul>
+										<li>Ubicación Ejemplo</li>
+									</ul>
+									<strong>Fecha de Inicio</strong>
+									<ul>
+										<li>Día: @item.FechaInicioEvento.ToString("d")</li>
+										<li>Hora: @item.FechaInicioEvento.ToString("H : m")</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingThree">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+										<strong>
+											<i>Organizador</i>
+										</strong>
+								</button>
+							</h2>
+							<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+								<div class="accordion-body">
+									<strong>Detalles del Promotor</strong>
+										<ul>
+											<li><strong>Nombres:</strong> @item.Promotor.Nombre</li>
+											<li><strong>Apellidos:</strong> @item.Promotor.Apellidos</li>
+										</ul>
+										<strong>Contacto</strong>
+										<ul>
+											<li><strong>Teléfono:</strong>@item.Promotor.Telefono</li>
+											<li><strong>Correo Electrónico:</strong>@item.Promotor.CorreoElectronico</li>
+										</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingTree">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTree" aria-expanded="false" aria-controls="collapseTree">
+									<strong>
+										<i>Disponibilidad y Estado del Evento</i>
+									</strong>
+								</button>
+							</h2>
+							<div id="collapseTree" class="accordion-collapse collapse" aria-labelledby="headingTree" data-bs-parent="#accordionExample">
+								<div class="accordion-body">
+									<strong>Disponibilidad</strong>
+									<ul>
+										<li>Aforo Disponible: @item.AforoMaximo</li>
+									</ul>
+									<strong>Estado del Evento</strong>
+									<ul>
+										<li>Estado: Terminado (Ejemplo)</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				
+				<form class="login100-form validate-form" id="account" method="post">
+					<div class="login100-pic js-tilt" data-tilt>
+							<span class="login100-form-title">
+								GAMMA-FEST
+							</span>
+
+							<span class="login100-form-title">
+								Detalles del Evento
+							</span>
+						@item.Descripcion
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut asd
+					</div>
+					<br>
+						<div class="container-login100-form-btn">
+							<button class="login100-form-btn" id="login-submit" type="submit">
+								<a class="login100-form-btn" asp-controller="Usuario" asp-action="CrearUsuario" asp-route-Id="@item.EventoId">
+									Asistir a este evento
+								</a>
+							</button>
+						</div>
+						@if (SignInManager.IsSignedIn(User))
+						{
+							<div class="container-login100-form-btn">
+								<button class="login100-form-btn" id="login-submit" type="submit">
+									<a class="login100-form-btn" asp-controller="Usuario" asp-action="IndexUsuario" asp-route-Id="@item.EventoId">
+										Lista de Asistentes:
+									</a>
+								</button>
+							</div>
+						}
+				</form>
+			</div>
+		</div>
+	</div>
+	}
+</body>
+</html>

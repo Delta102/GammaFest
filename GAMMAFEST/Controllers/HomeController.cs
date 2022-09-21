@@ -15,13 +15,9 @@ namespace GAMMAFEST.Controllers
             _logger = logger;
             _context = context;
         }
-        public IActionResult Index() { 
-            return View();
-        }
         [HttpGet]
-        public IActionResult Index(int TempId)
+        public IActionResult Index()
         {
-            ViewBag.tempId=TempId;
             IEnumerable<Evento> citaEvento = _context.Evento/*.Include(e=>e.Comentario)*/;
             return View(citaEvento);
         }

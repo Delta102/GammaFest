@@ -7,12 +7,13 @@ namespace GAMMAFEST.Data
 {
     public class ContextoDb:IdentityDbContext
     {
+        public ContextoDb() { }
         public ContextoDb(DbContextOptions<ContextoDb> options) : base(options) {
         }
         public DbSet<Blog> Blog { get; set; }
         public DbSet<Comentario> Comentario { get; set; }
         public DbSet<Evento> Evento { get; set; }
         public DbSet<Promotor> Promotor { get; set; }
-
+        public DbSet<GAMMAFEST.Models.Usuario> Usuario { get; set; }
     }
 }

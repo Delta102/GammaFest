@@ -2,6 +2,7 @@
 using GAMMAFEST.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace GAMMAFEST.Controllers
 {
@@ -38,6 +39,7 @@ namespace GAMMAFEST.Controllers
             }
             return temp1;
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult CrearEvento(Evento evento) {
@@ -45,16 +47,17 @@ namespace GAMMAFEST.Controllers
                 evento.NombreImagen = SubirArchivo(evento);
                 _context.Add(evento);
                 _context.SaveChangesAsync();
+                TempData["AlertMessage"] = "Evento Creado Satisfactoriamente!!!";
                 return RedirectToAction("CrearEvento");
             }
             return View(evento);
         }
-        [HttpPost]
-        public IActionResult IndexEvento(int TempId)
+
+        [HttpGet]
+        public IActionResult IndexEvento(int? id)
         {
-            ViewBag.tempId = TempId;
-            IEnumerable<Evento> listaEvento = _context.Evento.Where(u=>u.EventoId==TempId);
-            return View(listaEvento);
+            IEnumerable<Evento> listado = _context.Evento.Include(p=>p.Promotor).Where(e=>e.EventoId == id);
+            return View(listado);
         }
     }
 }

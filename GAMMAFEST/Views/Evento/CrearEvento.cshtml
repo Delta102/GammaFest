@@ -1,4 +1,8 @@
-﻿@model GAMMAFEST.Models.Evento
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model GAMMAFEST.Models.Evento
 
 @{
     ViewData["Title"] = "CrearEvento";
@@ -26,68 +30,77 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <title>Administración de Eventos</title>
 </head>
-<body>
-    <div class="container-fluid">
+    <body>
+        <div class="container-fluid">
 
-        <h1>CrearEvento</h1>
+            <h1>CrearEvento</h1>
 
-        <h4>Evento</h4>
-        <hr />
-        <div class="row">
-            <div class="col-md-4">
-                <form method="post" asp-action="CrearEvento" enctype="multipart/form-data">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group">
-                        <label asp-for="Descripcion" class="form-label">Descripción del Evento</label>
-                        <textarea asp-for="Descripcion" id="summernote" class="form-control"></textarea>
-                        <span asp-validation-for="Descripcion" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="NombreEvento" class="form-label">Descripción del Evento</label>
-                        <input asp-for="NombreEvento" id="summernote" class="form-control" />
-                        <span asp-validation-for="NombreEvento" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Protocolos" class="form-label">Protocolos</label>
-                        <textarea asp-for="Protocolos" id="summernote" class="form-control"></textarea>
-                        <span asp-validation-for="Protocolos" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="FechaInicioEvento" class="control-label">Ingrese Fecha de Inicio del Evento</label>
-                        <input asp-for="FechaInicioEvento" class="form-control" />
-                        <span asp-validation-for="FechaInicioEvento" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <input asp-for="NombreImagen" value="a1" />
-                        <input asp-for="ImagenTemp" value="a1" />
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="ArchivoImagen" class="control-label">Ingrese Imagen</label>
-                        <input asp-for="ArchivoImagen" accept="image/*" />
-                        <span asp-validation-for="ArchivoImagen" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <input asp-for="IdPromotor" value="a55a028d-336c-41bc-b594-75eb6e63796c">
-                    </div>
-                    <div class="form-group">
-                        @*<label asp-for="IdString" class="control-label"></label>*@
-                        @*<input type="hidden" asp-for="IdString" value="1" class ="form-control" asp-items="ViewBag.Id"></input>*@
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Almacenar Evento" class="cta3" />
-                    </div>
-                </form>
+            <h4>Evento</h4>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <form method="post" asp-action="CrearEvento" enctype="multipart/form-data">
+                        
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Descripcion" class="form-label">Descripción del Evento</label>
+                                <textarea asp-for="Descripcion" id="summernote" class="form-control"></textarea>
+                                <span asp-validation-for="Descripcion" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="NombreEvento" class="form-label">Nombre del Evento</label>
+                                <input asp-for="NombreEvento" id="summernote" class="form-control" />
+                                <span asp-validation-for="NombreEvento" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Protocolos" class="form-label">Protocolos</label>
+                                <textarea asp-for="Protocolos" id="summernote" class="form-control"></textarea>
+                                <span asp-validation-for="Protocolos" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="FechaInicioEvento" class="control-label">Ingrese Fecha de Inicio del Evento</label>
+                                <input asp-for="FechaInicioEvento" class="form-control" />
+                                <span asp-validation-for="FechaInicioEvento" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" asp-for="NombreImagen" value="a1" />
+                                <input type="hidden" asp-for="ImagenTemp" value="a1" />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ArchivoImagen" class="control-label">Ingrese Imagen: <br></label>
+                                <input asp-for="ArchivoImagen" accept="image/*" />
+                                <span asp-validation-for="ArchivoImagen" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="AforoMaximo" class="control-label">Ingrese Imagen: <br></label>
+                                <input asp-for="AforoMaximo">
+                                <span asp-validation-for="AforoMaximo" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                <input asp-for="IdPromotor" value="@UserManager.GetUserId(User)" type="hidden">
+                            }
+                            </div>
+                            <div class="form-group">
+                                @*<label asp-for="IdString" class="control-label"></label>*@
+                                @*<input type="hidden" asp-for="IdString" value="1" class ="form-control" asp-items="ViewBag.Id"></input>*@
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Almacenar Evento" class="cta3" />
+                            </div>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <a asp-controller="Home" asp-action="Index">
+                    Regresar
+                </a>
             </div>
         </div>
-        <div>
-            <a asp-controller="Home" asp-action="Index">
-                Regresar
-            </a>
-        </div>
-        </div>
-
-    </div>
-</body>
+    </body>
 </html>
 
 @section Scripts {

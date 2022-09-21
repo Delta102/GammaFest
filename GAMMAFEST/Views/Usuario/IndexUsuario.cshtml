@@ -1,0 +1,84 @@
+﻿
+@model IEnumerable<GAMMAFEST.Models.Usuario>
+
+@{
+    ViewData["Title"] = "IndexUsuario";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Asistencia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <!--<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/css/dist/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100" style="padding:55px">
+                <div class="container">
+                    <table>
+                        <th class="login100-pic js-tilt" data-tilt style="background-color: white;
+  border: black 0px solid;
+  position: relative;
+  position: relative;
+  right: 1.8em;">
+                            <img src="@Url.Content("~/image/"+ViewBag.ni)" alt="IMG">
+                        </th>
+
+                        <br>
+                        
+                        @foreach (var item in Model)
+                        {
+                            <th class="list-group">
+                                <li class="list-group-item clearfix">
+                                    <img class="img-responsive img-rounded" src="http://placehold.it/256/163a63" alt="" />
+                                    <h3 class="list-group-item-heading">
+                                        @item.Nombre @item.Apellido
+                                        <span class="label label-danger pull-right">ASISTENTE</span>
+                                    </h3>
+                                    <p class="list-group-item-text lead">
+                                        "Aquí información del asistente, como por ejemplo el número de entrada, Número de Documento o fecha de nacimiento"
+                                        <br />
+                                    </p>
+                                    @*
+                                    <div class="btn-toolbar pull-right" role="toolbar" aria-label="">
+                                        <a href="#" class="btn btn-default">Add to cart</a>
+                                        <a href="#" class="btn btn-primary">$29.99</a>
+                                    </div>*@
+                                </li>
+                                <br/>
+                            </th>
+                        }
+                    </table>
+
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn" id="login-submit" type="submit">
+                            <a class="login100-form-btn" asp-controller="Evento" asp-action="IndexEvento" asp-route-Id="@ViewBag.ni2">
+                                Regresar
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

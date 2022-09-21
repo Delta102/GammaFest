@@ -12,8 +12,7 @@ builder.Services.AddDbContext<ContextoDb>(options =>
 //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
 //    .AddEntityFrameworkStores<ContextoDb>();
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders().AddDefaultUI().
-    AddEntityFrameworkStores<ContextoDb>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders().AddDefaultUI().AddEntityFrameworkStores<ContextoDb>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -41,5 +40,4 @@ app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
 app.Run();
