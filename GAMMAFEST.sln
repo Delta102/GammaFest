@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAMMAFEST", "GAMMAFEST\GAMMAFEST.csproj", "{D055C52F-084D-4691-AB8B-905654EE9DEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GAMMAFEST", "GAMMAFEST\GAMMAFEST.csproj", "{D055C52F-084D-4691-AB8B-905654EE9DEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAMMAFEST_TESTING", "GAMMAFEST_TESTING\GAMMAFEST_TESTING.csproj", "{FA93CC27-769B-4850-875B-397840F87769}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D055C52F-084D-4691-AB8B-905654EE9DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D055C52F-084D-4691-AB8B-905654EE9DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D055C52F-084D-4691-AB8B-905654EE9DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA93CC27-769B-4850-875B-397840F87769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA93CC27-769B-4850-875B-397840F87769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA93CC27-769B-4850-875B-397840F87769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA93CC27-769B-4850-875B-397840F87769}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

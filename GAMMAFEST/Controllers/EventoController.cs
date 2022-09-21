@@ -1,5 +1,6 @@
 ﻿using GAMMAFEST.Data;
 using GAMMAFEST.Models;
+using GAMMAFEST.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -8,12 +9,12 @@ namespace GAMMAFEST.Controllers
 {
     public class EventoController : Controller
     {
-        public readonly ContextoDb _context;
+        public readonly IEventoRepositorio repositorio;
         public readonly IWebHostEnvironment _hostEnvironment;
 
-        public EventoController(ContextoDb context, IWebHostEnvironment hostEnvironment)
+        public EventoController(IEventoRepositorio repositorio, IWebHostEnvironment hostEnvironment)
         {
-            _context = context;
+            this.repositorio = repositorio;
             _hostEnvironment = hostEnvironment;
         }
         public IActionResult CrearEvento() {
@@ -45,8 +46,7 @@ namespace GAMMAFEST.Controllers
         public IActionResult CrearEvento(Evento evento) {
             if (ModelState.IsValid) {
                 evento.NombreImagen = SubirArchivo(evento);
-                _context.Add(evento);
-                _context.SaveChangesAsync();
+                repositorio.CrearEvento(evento);
                 TempData["AlertMessage"] = "Evento Creado Satisfactoriamente!!!";
                 return RedirectToAction("CrearEvento");
             }
@@ -56,7 +56,7 @@ namespace GAMMAFEST.Controllers
         [HttpGet]
         public IActionResult IndexEvento(int? id)
         {
-            IEnumerable<Evento> listado = _context.Evento.Include(p=>p.Promotor).Where(e=>e.EventoId == id);
+            IEnumerable<Evento> listado = repositorio.ObtenerEventos(id);
             return View(listado);
         }
     }

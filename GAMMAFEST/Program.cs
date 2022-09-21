@@ -1,4 +1,5 @@
 using GAMMAFEST.Data;
+using GAMMAFEST.Repositorio;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Data.Common;
@@ -16,6 +17,9 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProvid
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//Añadir servicios para las interfaces
+builder.Services.AddTransient<IEventoRepositorio, EventoRepositorio>();
 
 var app = builder.Build();
 

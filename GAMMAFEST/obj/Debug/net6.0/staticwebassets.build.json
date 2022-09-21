@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xwzdzZ4CP5lqBSsLsczCmVRnMSs8VgtNh4prnVA9RJY=",
+  "Hash": "8LvD1/9ash3198c4eUAT2T6ypDcgbj/NWV60Ab1wRWw=",
   "Source": "GAMMAFEST",
   "BasePath": "_content/GAMMAFEST",
   "Mode": "Default",
@@ -4129,6 +4129,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\imagenPrueba1.jpg"
+    },
+    {
+      "Identity": "E:\\CICLO VIII\\CALIDAD Y PRUEBAS DE SOFTWARE\\GAMMAFEST\\GAMMAFEST\\wwwroot\\image\\imagenPrueba1.webp",
+      "SourceId": "GAMMAFEST",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\CICLO VIII\\CALIDAD Y PRUEBAS DE SOFTWARE\\GAMMAFEST\\GAMMAFEST\\wwwroot\\",
+      "BasePath": "_content/GAMMAFEST",
+      "RelativePath": "image/imagenPrueba1.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\imagenPrueba1.webp"
     },
     {
       "Identity": "E:\\CICLO VIII\\CALIDAD Y PRUEBAS DE SOFTWARE\\GAMMAFEST\\GAMMAFEST\\wwwroot\\image\\imagenPrueba2.webp",
