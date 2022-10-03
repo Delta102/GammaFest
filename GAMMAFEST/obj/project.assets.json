@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "BarCode/2022.9.8982": {
+        "type": "package",
+        "dependencies": {
+          "IronSoftware.System.Drawing": "2022.9.8843"
+        },
+        "compile": {
+          "lib/netstandard2.0/IronBarCode.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IronBarCode.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "bootstrap/5.2.1": {
         "type": "package",
         "contentFiles": {
@@ -227,6 +243,35 @@
           }
         }
       },
+      "DynamicLanguageRuntime/1.3.2": {
+        "type": "package",
+        "dependencies": {
+          "System.CodeDom": "4.7.0",
+          "System.Configuration.ConfigurationManager": "4.7.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Dynamic.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.1/Microsoft.Scripting.Metadata.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.1/Microsoft.Scripting.dll": {
+            "related": ".Metadata.xml;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Dynamic.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.1/Microsoft.Scripting.Metadata.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.1/Microsoft.Scripting.dll": {
+            "related": ".Metadata.xml;.xml"
+          }
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -237,6 +282,58 @@
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "IronPython/2.7.12": {
+        "type": "package",
+        "dependencies": {
+          "DynamicLanguageRuntime": "1.3.1",
+          "Microsoft.Win32.Registry": "4.7.0",
+          "Mono.Unix": "7.1.0-final.1.21458.1"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/IronPython.Modules.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.1/IronPython.SQLite.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.1/IronPython.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.1/IronPython.dll": {
+            "related": ".Modules.xml;.SQLite.xml;.Wpf.xml;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/IronPython.Modules.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.1/IronPython.SQLite.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.1/IronPython.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/netcoreapp3.1/IronPython.dll": {
+            "related": ".Modules.xml;.SQLite.xml;.Wpf.xml;.xml"
+          }
+        }
+      },
+      "IronSoftware.System.Drawing/2022.9.8843": {
+        "type": "package",
+        "dependencies": {
+          "SixLabors.ImageSharp.Drawing": "1.0.0-beta15"
+        },
+        "compile": {
+          "lib/netstandard2.0/IronSoftware.Drawing.Common.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IronSoftware.Drawing.Common.dll": {
+            "related": ".pdb"
           }
         }
       },
@@ -1738,7 +1835,7 @@
           }
         }
       },
-      "Microsoft.NETCore.Platforms/3.1.0": {
+      "Microsoft.NETCore.Platforms/5.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -1990,6 +2087,96 @@
           }
         }
       },
+      "Mono.Unix/7.1.0-final.1.21458.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Mono.Unix.dll": {
+            "related": ".dll.config;.pdb"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Mono.Unix.dll": {
+            "related": ".dll.config;.pdb"
+          }
+        },
+        "build": {
+          "build/Mono.Unix.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/android-arm/native/libMono.Unix.so": {
+            "assetType": "native",
+            "rid": "android-arm"
+          },
+          "runtimes/android-arm64/native/libMono.Unix.so": {
+            "assetType": "native",
+            "rid": "android-arm64"
+          },
+          "runtimes/android-x64/native/libMono.Unix.so": {
+            "assetType": "native",
+            "rid": "android-x64"
+          },
+          "runtimes/android-x86/native/libMono.Unix.so": {
+            "assetType": "native",
+            "rid": "android-x86"
+          },
+          "runtimes/ios-arm/native/libMono.Unix.a": {
+            "assetType": "native",
+            "rid": "ios-arm"
+          },
+          "runtimes/ios-arm64/native/libMono.Unix.a": {
+            "assetType": "native",
+            "rid": "ios-arm64"
+          },
+          "runtimes/ios-armv7s/native/libMono.Unix.a": {
+            "assetType": "native",
+            "rid": "ios-armv7s"
+          },
+          "runtimes/iossimulator-arm64/native/libMono.Unix.a": {
+            "assetType": "native",
+            "rid": "iossimulator-arm64"
+          },
+          "runtimes/iossimulator-x64/native/libMono.Unix.a": {
+            "assetType": "native",
+            "rid": "iossimulator-x64"
+          },
+          "runtimes/linux-arm/native/libMono.Unix.so": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm64/native/libMono.Unix.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libMono.Unix.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/maccatalyst-arm64/native/libMono.Unix.a": {
+            "assetType": "native",
+            "rid": "maccatalyst-arm64"
+          },
+          "runtimes/maccatalyst-x64/native/libMono.Unix.a": {
+            "assetType": "native",
+            "rid": "maccatalyst-x64"
+          },
+          "runtimes/osx-arm64/native/libMono.Unix.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libMono.Unix.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/tvos-arm64/native/libMono.Unix.a": {
+            "assetType": "native",
+            "rid": "tvos-arm64"
+          },
+          "runtimes/tvossimulator-x64/native/libMono.Unix.a": {
+            "assetType": "native",
+            "rid": "tvossimulator-x64"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -2197,6 +2384,15 @@
           }
         }
       },
+      "QRCoder/1.4.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/QRCoder.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/QRCoder.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -2368,6 +2564,53 @@
           }
         }
       },
+      "SixLabors.Fonts/1.0.0-beta18": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/SixLabors.Fonts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.Fonts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SixLabors.ImageSharp/2.1.3": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0",
+          "System.Text.Encoding.CodePages": "5.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SixLabors.ImageSharp.Drawing/1.0.0-beta15": {
+        "type": "package",
+        "dependencies": {
+          "SixLabors.Fonts": "1.0.0-beta18",
+          "SixLabors.ImageSharp": "2.1.3"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.Drawing.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.Drawing.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2396,6 +2639,19 @@
         },
         "runtime": {
           "lib/netstandard1.1/System.Buffers.dll": {}
+        }
+      },
+      "System.CodeDom/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Collections/4.3.0": {
@@ -3641,10 +3897,10 @@
           }
         }
       },
-      "System.Text.Encoding.CodePages/4.7.0": {
+      "System.Text.Encoding.CodePages/5.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.0"
+          "Microsoft.NETCore.Platforms": "5.0.0"
         },
         "compile": {
           "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {
@@ -3843,6 +4099,28 @@
     }
   },
   "libraries": {
+    "BarCode/2022.9.8982": {
+      "sha512": "PeE9clBK5fytknkWc9JhcimHTjGA3h8fM8Oy6Fj+anOmI4wXJ2KIusPzVLcS1LEDFQyEySwbUZWIbJIdxdWEXg==",
+      "type": "package",
+      "path": "barcode/2022.9.8982",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EULA.txt",
+        "barcode.2022.9.8982.nupkg.sha512",
+        "barcode.nuspec",
+        "docs/README.md",
+        "images/iron-logo-128.png",
+        "lib/net462/IronBarCode.dll",
+        "lib/net462/IronBarCode.pdb",
+        "lib/net462/IronBarCode.xml",
+        "lib/netstandard2.0/IronBarCode.dll",
+        "lib/netstandard2.0/IronBarCode.pdb",
+        "lib/netstandard2.0/IronBarCode.xml",
+        "readme-setup.txt",
+        "readme.txt"
+      ]
+    },
     "bootstrap/5.2.1": {
       "sha512": "hZdgEyJ4xwoNYWOJiS0HPYhe3f2Ja+Sm0s9PfWhNiKDVUys/SqqJOSdz0FPYS3E+AKmMhkk5jTcUJ/q0jWpNuw==",
       "type": "package",
@@ -3943,6 +4221,37 @@
         "contentFiles/any/any/wwwroot/js/bootstrap.min.js.map"
       ]
     },
+    "DynamicLanguageRuntime/1.3.2": {
+      "sha512": "XEAfs/5RHh9KjHs/5MnKV7PpgA56uXNDdukPiMfkPm/aIUtqabLhGMPAKK1UolxpIU98mHiildbpFVgest6xyQ==",
+      "type": "package",
+      "path": "dynamiclanguageruntime/1.3.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "dynamiclanguageruntime.1.3.2.nupkg.sha512",
+        "dynamiclanguageruntime.nuspec",
+        "lib/net45/Microsoft.Dynamic.dll",
+        "lib/net45/Microsoft.Dynamic.xml",
+        "lib/net45/Microsoft.Scripting.Metadata.dll",
+        "lib/net45/Microsoft.Scripting.Metadata.xml",
+        "lib/net45/Microsoft.Scripting.dll",
+        "lib/net45/Microsoft.Scripting.xml",
+        "lib/netcoreapp3.1/Microsoft.Dynamic.dll",
+        "lib/netcoreapp3.1/Microsoft.Dynamic.xml",
+        "lib/netcoreapp3.1/Microsoft.Scripting.Metadata.dll",
+        "lib/netcoreapp3.1/Microsoft.Scripting.Metadata.xml",
+        "lib/netcoreapp3.1/Microsoft.Scripting.dll",
+        "lib/netcoreapp3.1/Microsoft.Scripting.xml",
+        "lib/netstandard2.0/Microsoft.Dynamic.dll",
+        "lib/netstandard2.0/Microsoft.Dynamic.xml",
+        "lib/netstandard2.0/Microsoft.Scripting.Metadata.dll",
+        "lib/netstandard2.0/Microsoft.Scripting.Metadata.xml",
+        "lib/netstandard2.0/Microsoft.Scripting.dll",
+        "lib/netstandard2.0/Microsoft.Scripting.xml"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -3957,6 +4266,56 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "IronPython/2.7.12": {
+      "sha512": "fxbH4L39a0AkDfvjH+9z+P1A1wSIUHtmU5XKn/2FUt2JA73rfJ9o8iuRIic+TYSpu6M4AeduRxNV87Fcvk0vIw==",
+      "type": "package",
+      "path": "ironpython/2.7.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "ironpython.2.7.12.nupkg.sha512",
+        "ironpython.nuspec",
+        "lib/net45/IronPython.Modules.dll",
+        "lib/net45/IronPython.Modules.xml",
+        "lib/net45/IronPython.SQLite.dll",
+        "lib/net45/IronPython.SQLite.xml",
+        "lib/net45/IronPython.Wpf.dll",
+        "lib/net45/IronPython.Wpf.xml",
+        "lib/net45/IronPython.dll",
+        "lib/net45/IronPython.xml",
+        "lib/netcoreapp3.1/IronPython.Modules.dll",
+        "lib/netcoreapp3.1/IronPython.Modules.xml",
+        "lib/netcoreapp3.1/IronPython.SQLite.dll",
+        "lib/netcoreapp3.1/IronPython.SQLite.xml",
+        "lib/netcoreapp3.1/IronPython.Wpf.dll",
+        "lib/netcoreapp3.1/IronPython.Wpf.xml",
+        "lib/netcoreapp3.1/IronPython.dll",
+        "lib/netcoreapp3.1/IronPython.xml",
+        "lib/netstandard2.0/IronPython.Modules.dll",
+        "lib/netstandard2.0/IronPython.Modules.xml",
+        "lib/netstandard2.0/IronPython.SQLite.dll",
+        "lib/netstandard2.0/IronPython.SQLite.xml",
+        "lib/netstandard2.0/IronPython.dll",
+        "lib/netstandard2.0/IronPython.xml"
+      ]
+    },
+    "IronSoftware.System.Drawing/2022.9.8843": {
+      "sha512": "TrRRBwWWBz0BoRV3VM6cn9tlzkxebfYvGMCFkxhArv6wB8lrW75bcCXcp0Bc8OI8GJegOsx31cCHO9GS00AzjQ==",
+      "type": "package",
+      "path": "ironsoftware.system.drawing/2022.9.8843",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EULA.txt",
+        "docs/README.md",
+        "ironsoftware.system.drawing.2022.9.8843.nupkg.sha512",
+        "ironsoftware.system.drawing.nuspec",
+        "lib/netstandard2.0/IronSoftware.Drawing.Common.dll",
+        "lib/netstandard2.0/IronSoftware.Drawing.Common.pdb"
       ]
     },
     "MessagePack/2.1.152": {
@@ -5691,17 +6050,18 @@
         "notices/THIRDPARTYNOTICES.txt"
       ]
     },
-    "Microsoft.NETCore.Platforms/3.1.0": {
-      "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
+    "Microsoft.NETCore.Platforms/5.0.0": {
+      "sha512": "VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/3.1.0",
+      "path": "microsoft.netcore.platforms/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+        "microsoft.netcore.platforms.5.0.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
@@ -6412,6 +6772,68 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Mono.Unix/7.1.0-final.1.21458.1": {
+      "sha512": "Rhxz4A7By8Q0wEgDqR+mioDsYXGrcYMYPiWE9bSaUKMpG8yAGArhetEQV5Ms6KhKCLdQTlPYLBKPZYoKbAvT/g==",
+      "type": "package",
+      "path": "mono.unix/7.1.0-final.1.21458.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "auxiliary/android-arm/native/libMono.Unix.a",
+        "auxiliary/android-arm/native/libMono.Unix.so.debug",
+        "auxiliary/android-arm64/native/libMono.Unix.a",
+        "auxiliary/android-arm64/native/libMono.Unix.so.debug",
+        "auxiliary/android-x64/native/libMono.Unix.a",
+        "auxiliary/android-x64/native/libMono.Unix.so.debug",
+        "auxiliary/android-x86/native/libMono.Unix.a",
+        "auxiliary/android-x86/native/libMono.Unix.so.debug",
+        "auxiliary/linux-arm/native/libMono.Unix.a",
+        "auxiliary/linux-arm/native/libMono.Unix.so.debug",
+        "auxiliary/linux-arm64/native/libMono.Unix.a",
+        "auxiliary/linux-arm64/native/libMono.Unix.so.debug",
+        "auxiliary/linux-x64/native/libMono.Unix.a",
+        "auxiliary/linux-x64/native/libMono.Unix.so.debug",
+        "auxiliary/osx-arm64/native/libMono.Unix.a",
+        "auxiliary/osx-x64/native/libMono.Unix.a",
+        "build/Mono.Unix.targets",
+        "lib/net45/Mono.Unix.dll",
+        "lib/net45/Mono.Unix.dll.config",
+        "lib/net45/Mono.Unix.pdb",
+        "lib/net6.0/Mono.Unix.dll",
+        "lib/net6.0/Mono.Unix.dll.config",
+        "lib/net6.0/Mono.Unix.pdb",
+        "lib/netcoreapp3.1/Mono.Unix.dll",
+        "lib/netcoreapp3.1/Mono.Unix.dll.config",
+        "lib/netcoreapp3.1/Mono.Unix.pdb",
+        "lib/netstandard2.0/Mono.Unix.dll",
+        "lib/netstandard2.0/Mono.Unix.dll.config",
+        "lib/netstandard2.0/Mono.Unix.pdb",
+        "lib/netstandard2.1/Mono.Unix.dll",
+        "lib/netstandard2.1/Mono.Unix.dll.config",
+        "lib/netstandard2.1/Mono.Unix.pdb",
+        "mono.unix.7.1.0-final.1.21458.1.nupkg.sha512",
+        "mono.unix.nuspec",
+        "runtimes/android-arm/native/libMono.Unix.so",
+        "runtimes/android-arm64/native/libMono.Unix.so",
+        "runtimes/android-x64/native/libMono.Unix.so",
+        "runtimes/android-x86/native/libMono.Unix.so",
+        "runtimes/ios-arm/native/libMono.Unix.a",
+        "runtimes/ios-arm64/native/libMono.Unix.a",
+        "runtimes/ios-armv7s/native/libMono.Unix.a",
+        "runtimes/iossimulator-arm64/native/libMono.Unix.a",
+        "runtimes/iossimulator-x64/native/libMono.Unix.a",
+        "runtimes/linux-arm/native/libMono.Unix.so",
+        "runtimes/linux-arm64/native/libMono.Unix.so",
+        "runtimes/linux-x64/native/libMono.Unix.so",
+        "runtimes/maccatalyst-arm64/native/libMono.Unix.a",
+        "runtimes/maccatalyst-x64/native/libMono.Unix.a",
+        "runtimes/osx-arm64/native/libMono.Unix.dylib",
+        "runtimes/osx-x64/native/libMono.Unix.dylib",
+        "runtimes/tvos-arm64/native/libMono.Unix.a",
+        "runtimes/tvossimulator-x64/native/libMono.Unix.a"
+      ]
+    },
     "NETStandard.Library/1.6.1": {
       "sha512": "WcSp3+vP+yHNgS8EV5J7pZ9IRpeDuARBPN28by8zqff1wJQXm26PVU8L3/fYLBJVU7BtDyqNVWq2KlCVvSSR4A==",
       "type": "package",
@@ -6615,6 +7037,27 @@
         "lib/netstandard2.0/NuGet.Versioning.xml",
         "nuget.versioning.6.2.1.nupkg.sha512",
         "nuget.versioning.nuspec"
+      ]
+    },
+    "QRCoder/1.4.3": {
+      "sha512": "fWuFqjm8GTlEb2GqBl3Hi8HZZeZQwBSHxvRPtPjyNbT82H0ff0JwavKRBmMaXCno1Av6McPC8aJzri0Mj2w9Jw==",
+      "type": "package",
+      "path": "qrcoder/1.4.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/QRCoder.dll",
+        "lib/net40/QRCoder.dll",
+        "lib/net5.0-windows7.0/QRCoder.dll",
+        "lib/net5.0/QRCoder.dll",
+        "lib/net6.0-windows7.0/QRCoder.dll",
+        "lib/net6.0/QRCoder.dll",
+        "lib/netstandard1.3/QRCoder.dll",
+        "lib/netstandard2.0/QRCoder.dll",
+        "nuget-icon.png",
+        "nuget-readme.md",
+        "qrcoder.1.4.3.nupkg.sha512",
+        "qrcoder.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -6841,6 +7284,68 @@
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
       ]
     },
+    "SixLabors.Fonts/1.0.0-beta18": {
+      "sha512": "evykNmy/kEE9EAEKgZm3MNUYXuMHFfmcLUNPw7Ho5q7OI96GFkkIxBm+QaKOTPBKw+L0AjKOs+ArVg8P40Ac9g==",
+      "type": "package",
+      "path": "sixlabors.fonts/1.0.0-beta18",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/SixLabors.Fonts.dll",
+        "lib/netcoreapp3.1/SixLabors.Fonts.xml",
+        "lib/netstandard2.0/SixLabors.Fonts.dll",
+        "lib/netstandard2.0/SixLabors.Fonts.xml",
+        "lib/netstandard2.1/SixLabors.Fonts.dll",
+        "lib/netstandard2.1/SixLabors.Fonts.xml",
+        "sixlabors.fonts.1.0.0-beta18.nupkg.sha512",
+        "sixlabors.fonts.128.png",
+        "sixlabors.fonts.nuspec"
+      ]
+    },
+    "SixLabors.ImageSharp/2.1.3": {
+      "sha512": "8yonNRWX3vUE9k29ta0Hbfa0AEc0hbDjSH/nZ3vOTJEXmY6hLnGsjDKoz96Z+AgOsrdkAu6PdL/Ebaf70aitzw==",
+      "type": "package",
+      "path": "sixlabors.imagesharp/2.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net472/SixLabors.ImageSharp.dll",
+        "lib/net472/SixLabors.ImageSharp.xml",
+        "lib/netcoreapp2.1/SixLabors.ImageSharp.dll",
+        "lib/netcoreapp2.1/SixLabors.ImageSharp.xml",
+        "lib/netcoreapp3.1/SixLabors.ImageSharp.dll",
+        "lib/netcoreapp3.1/SixLabors.ImageSharp.xml",
+        "lib/netstandard2.0/SixLabors.ImageSharp.dll",
+        "lib/netstandard2.0/SixLabors.ImageSharp.xml",
+        "lib/netstandard2.1/SixLabors.ImageSharp.dll",
+        "lib/netstandard2.1/SixLabors.ImageSharp.xml",
+        "sixlabors.imagesharp.128.png",
+        "sixlabors.imagesharp.2.1.3.nupkg.sha512",
+        "sixlabors.imagesharp.nuspec"
+      ]
+    },
+    "SixLabors.ImageSharp.Drawing/1.0.0-beta15": {
+      "sha512": "HMb/JNtNsSOr0lh71s5jD4Bv7sUwTxhGz2fOtuXcInQ4p9SB+1oEY3I6PrKXHpOCKaYArLD5r/4mA8t0dT/M5A==",
+      "type": "package",
+      "path": "sixlabors.imagesharp.drawing/1.0.0-beta15",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net472/SixLabors.ImageSharp.Drawing.dll",
+        "lib/net472/SixLabors.ImageSharp.Drawing.xml",
+        "lib/netcoreapp2.1/SixLabors.ImageSharp.Drawing.dll",
+        "lib/netcoreapp2.1/SixLabors.ImageSharp.Drawing.xml",
+        "lib/netcoreapp3.1/SixLabors.ImageSharp.Drawing.dll",
+        "lib/netcoreapp3.1/SixLabors.ImageSharp.Drawing.xml",
+        "lib/netstandard2.0/SixLabors.ImageSharp.Drawing.dll",
+        "lib/netstandard2.0/SixLabors.ImageSharp.Drawing.xml",
+        "lib/netstandard2.1/SixLabors.ImageSharp.Drawing.dll",
+        "lib/netstandard2.1/SixLabors.ImageSharp.Drawing.xml",
+        "sixlabors.imagesharp.drawing.1.0.0-beta15.nupkg.sha512",
+        "sixlabors.imagesharp.drawing.128.png",
+        "sixlabors.imagesharp.drawing.nuspec"
+      ]
+    },
     "System.AppContext/4.3.0": {
       "sha512": "fKC+rmaLfeIzUhagxY17Q9siv/sPrjjKcfNg1Ic8IlQkZLipo8ljcaZQu4VtI4Jqbzjc2VTjzGLF6WmsRXAEgA==",
       "type": "package",
@@ -6909,6 +7414,29 @@
         "lib/netstandard1.1/System.Buffers.dll",
         "system.buffers.4.3.0.nupkg.sha512",
         "system.buffers.nuspec"
+      ]
+    },
+    "System.CodeDom/4.7.0": {
+      "sha512": "Hs9pw/kmvH3lXaZ1LFKj3pLQsiGfj2xo3sxSzwiLlRL6UcMZUTeCfoJ9Udalvn3yq5dLlPEZzYegrTQ1/LhPOQ==",
+      "type": "package",
+      "path": "system.codedom/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.CodeDom.dll",
+        "lib/net461/System.CodeDom.xml",
+        "lib/netstandard2.0/System.CodeDom.dll",
+        "lib/netstandard2.0/System.CodeDom.xml",
+        "ref/net461/System.CodeDom.dll",
+        "ref/net461/System.CodeDom.xml",
+        "ref/netstandard2.0/System.CodeDom.dll",
+        "ref/netstandard2.0/System.CodeDom.xml",
+        "system.codedom.4.7.0.nupkg.sha512",
+        "system.codedom.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Collections/4.3.0": {
@@ -9937,13 +10465,14 @@
         "system.text.encoding.nuspec"
       ]
     },
-    "System.Text.Encoding.CodePages/4.7.0": {
-      "sha512": "aeu4FlaUTemuT1qOd1MyU4T516QR4Fy+9yDbwWMPHOHy7U8FD6SgTzdZFO7gHcfAPHtECqInbwklVvUK4RHcNg==",
+    "System.Text.Encoding.CodePages/5.0.0": {
+      "sha512": "NyscU59xX6Uo91qvhOs2Ccho3AR2TnZPomo1Z0K6YpyztBPM/A5VbkzOO19sy3A3i1TtEnTxA7bCe3Us+r5MWg==",
       "type": "package",
-      "path": "system.text.encoding.codepages/4.7.0",
+      "path": "system.text.encoding.codepages/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
@@ -9971,7 +10500,7 @@
         "runtimes/win/lib/netstandard1.3/System.Text.Encoding.CodePages.dll",
         "runtimes/win/lib/netstandard2.0/System.Text.Encoding.CodePages.dll",
         "runtimes/win/lib/netstandard2.0/System.Text.Encoding.CodePages.xml",
-        "system.text.encoding.codepages.4.7.0.nupkg.sha512",
+        "system.text.encoding.codepages.5.0.0.nupkg.sha512",
         "system.text.encoding.codepages.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -10573,6 +11102,9 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BarCode >= 2022.9.8982",
+      "DynamicLanguageRuntime >= 1.3.2",
+      "IronPython >= 2.7.12",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.9",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.9",
       "Microsoft.EntityFrameworkCore >= 6.0.9",
@@ -10580,6 +11112,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.9",
       "Microsoft.Extensions.Identity.Core >= 6.0.9",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.9",
+      "QRCoder >= 1.4.3",
       "bootstrap >= 5.2.1"
     ]
   },
@@ -10622,6 +11155,18 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "BarCode": {
+            "target": "Package",
+            "version": "[2022.9.8982, )"
+          },
+          "DynamicLanguageRuntime": {
+            "target": "Package",
+            "version": "[1.3.2, )"
+          },
+          "IronPython": {
+            "target": "Package",
+            "version": "[2.7.12, )"
+          },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.9, )"
@@ -10651,6 +11196,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[6.0.9, )"
+          },
+          "QRCoder": {
+            "target": "Package",
+            "version": "[1.4.3, )"
           },
           "bootstrap": {
             "target": "Package",

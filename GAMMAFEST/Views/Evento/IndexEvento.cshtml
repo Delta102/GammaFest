@@ -144,7 +144,7 @@
 					</div>
 					<br>
 						<div class="container-login100-form-btn">
-							<button class="login100-form-btn" id="login-submit" type="submit">
+							<button class="login100-form-btn" id="venta" type="submit">
 								<a class="login100-form-btn" asp-controller="Usuario" asp-action="CrearUsuario" asp-route-Id="@item.EventoId">
 									Asistir a este evento
 								</a>
@@ -153,7 +153,7 @@
 						@if (SignInManager.IsSignedIn(User))
 						{
 							<div class="container-login100-form-btn">
-								<button class="login100-form-btn" id="login-submit" type="submit">
+								<button class="login100-form-btn" id="listado" type="submit">
 									<a class="login100-form-btn" asp-controller="Usuario" asp-action="IndexUsuario" asp-route-Id="@item.EventoId">
 										Lista de Asistentes:
 									</a>

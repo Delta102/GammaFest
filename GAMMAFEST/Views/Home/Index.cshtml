@@ -124,7 +124,7 @@
                     {
                         @foreach (var i in Model)
                         {
-                            <div class="col">
+                            <div class="col" id="@i.NombreEvento.Replace(" ","").ToLower()">
                                 <div class="card h-100">
                                     <div class="card" style="margin-top: -1em; background-color:white;">
                                         <div class="contenedor">

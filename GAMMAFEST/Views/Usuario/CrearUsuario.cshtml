@@ -34,7 +34,7 @@
                 <div class="login100-pic js-tilt" data-tilt>
                     <img src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/121/7767614121_a8207d12-1307-47cf-800f-6e491222498a.png?cb=1662594150" alt="IMG">
                 </div>
-                <form class="login100-form validate-form" id="account" method="post">
+                <form class="login100-form validate-form" id="create_User" method="post">
                     <div class="wrap-input100 validate-input">
                         <input asp-for="Nombre" class="input100" autocomplete="username" style="padding: 0 30px 0 2em;" aria-required="true" placeholder="Nombres:" />
                     </div>
@@ -93,9 +93,11 @@
                         <img src="https://1000marcas.net/wp-content/uploads/2020/08/Diners-Club-International-logo.jpg" id="amex" width="30" height="20">
                     </div>
                     <div class="container-login100-form-btn">
-                        <button onclick="Alerta();" class="login100-form-btn" id="login-submit" type="submit">
+                            <input onclick="Alerta()" type="submit" value="Confirmar" class="login100-form-btn" id="login-submit" />
+                        @*
+                        <a onclick="Alerta();" class="login100-form-btn" id="login-submit" type="submit" asp-controller="Usuario" asp-action="Qr" asp-route=1>
                             Confirmar
-                        </button>
+                        </a>*@
 
                         <script>
                             function Alerta(){

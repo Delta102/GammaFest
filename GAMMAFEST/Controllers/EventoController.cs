@@ -21,7 +21,7 @@ namespace GAMMAFEST.Controllers
             //ViewData["Id"] = new SelectList(_context.Promotor, "Id", "Id");
             return View();
         }
-        private string SubirArchivo(Evento evento)
+        public string SubirArchivo(Evento evento)
         {
             string? nArchivo = null;
             string? temp1 = null;
